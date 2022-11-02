@@ -181,6 +181,8 @@ createApp({
     }
 }).mount('#app');
 
+//da fare--->impostare la classe active sul contatto con chat attiva
+
 
 
 
