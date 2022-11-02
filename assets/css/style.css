@@ -9,7 +9,7 @@
     --light-gray-bar-bool: #EAEAEA;
     --bottom-bar-bool: #F3EEEA;
     --white-bool: #FFFFFF;
-    --bg-searchbar-bool: #FAFAFA;
+    --bg-chatlist-bool: #FAFAFA;
 
 }
 
@@ -33,7 +33,11 @@
 }
 
 .bg_searchbar {
-    background-color: var(--bg-searchbar-bool);
+    background-color: var(--bg-chatlist-bool);
+}
+
+.top_bar_bg {
+    background-color: var(--light-gray-bar-bool);
 }
 
 /*#endregion utility*/
@@ -55,6 +59,10 @@
     background-image: linear-gradient(#DDDBD1, #D2DBDB);
 }
 
+.active_chat {
+    background-color: var(--light-gray-bar-bool);
+}
+
 /*#endregion bg_app*/
 
 
@@ -74,8 +82,7 @@ input {
 
 /*#region main*/
 .main {
-    background-color: #B1B1B1;
-    height: 90%;
+    height: 1500px;
     width: 90%;
     position: absolute;
     top: 20px;
@@ -106,5 +113,19 @@ input {
     font-size: 14px;
 }
 
+.users_box {
+    border-right: 1px solid var(--top-icons-bool);
+}
+
+.single_chat {
+    border: 1px solid var(--bg-chatlist-bool);
+}
 
 /*#region users_box*/
+
+/*#region chat_box*/
+.sigle_chat_right i {
+    color: var(--top-icons-bool);
+}
+
+/*#endregion chat_box*/
