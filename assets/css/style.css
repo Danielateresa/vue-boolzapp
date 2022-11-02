@@ -16,3 +16,13 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+.bg_top {
+    height: 145px;
+    background-color: #009688;
+}
+
+.bg_bottom {
+    height: calc(100vh - 145px);
+    background-image: linear-gradient(#DDDBD1, #D2DBDB);
+}
