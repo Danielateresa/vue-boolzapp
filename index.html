@@ -134,26 +134,26 @@
                                 </div>
                             </div>
 
-                            <div
-                                class="chat_board">
+                            <div class="chat_board">
 
-                                <div class="d-flex justify-content-end">
-                                    <div class="user_msg messages">
-                                        <h6
-                                            v-if="contacts[activeContact].messages[activeContact].status
-                                            === sent" class="fw-normal mb-0">{{contacts[activeContact].messages[activeContact].message}}</h6>
-                                        <span class="text_gray">{{contacts[activeContact].messages[activeContact].date}}</span>
+                                <div v-for="(message, i) in
+                                    contacts[activeContact].messages"
+                                    class="d-flex">
+                                    <div class="messages"
+                                        :class="contacts[activeContact].messages[i].status
+                                        === 'sent'
+                                        ? 'user_msg' : 'friend_msg'">
+                                        <h6 class="fw-normal mb-0">{{contacts[activeContact].messages[i].message}}</h6>
+                                        <span class="text_gray">{{contacts[activeContact].messages[i].date}}</span>
                                     </div>
                                 </div>
 
-                                <div class="d-flex justify-content-start">
+                                <!--   <div class="d-flex justify-content-start">
                                     <div class="messages friend_msg">
                                         <h6 class="fw-normal mb-0 ">{{contacts[activeContact].messages[activeContact].message}}</h6>
                                         <span class="text_gray">{{contacts[activeContact].messages[activeContact].date}}</span>
                                     </div>
-                                </div>
-
-
+                                </div> -->
                             </div>
                             <div class="bottom_bar d-flex
                                 justify-content-between bg_searchbar p-1">

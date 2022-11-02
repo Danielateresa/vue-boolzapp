@@ -146,14 +146,17 @@ input {
     padding: 0.5rem;
     border-radius: 0.5rem;
     margin: 0.5rem 3rem 0.5rem 2rem;
+
 }
 
 .user_msg {
     background-color: var(--user-msg-bool);
+    margin-left: auto;
 }
 
 .friend_msg {
     background-color: var(--white-bool);
+
 }
 
 .chat_board span {
