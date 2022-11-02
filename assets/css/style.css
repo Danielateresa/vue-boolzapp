@@ -9,6 +9,8 @@
     --light-gray-bar-bool: #EAEAEA;
     --bottom-bar-bool: #F3EEEA;
     --white-bool: #FFFFFF;
+    --bg-searchbar-bool: #FAFAFA;
+
 }
 
 * {
@@ -28,6 +30,10 @@
 
 .notifications_color_bool {
     color: var(--notificatons-bool);
+}
+
+.bg_searchbar {
+    background-color: var(--bg-searchbar-bool);
 }
 
 /*#endregion utility*/
@@ -59,6 +65,11 @@ img {
     border-radius: 50%;
 }
 
+button,
+input {
+    border: none
+}
+
 /*#endregion common*/
 
 /*#region main*/
@@ -77,5 +88,18 @@ img {
 .right_users_header {
     color: var(--top-icons-bool);
 }
+
+.notification_text h6 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    line-height: 0.5;
+}
+
+.lens {
+    padding: 0.4rem 2rem;
+    color: var(--top-icons-bool);
+}
+
+
 
 /*#region users_box*/
