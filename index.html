@@ -114,11 +114,12 @@
                                 bg top_bar_bg">
                                 <div class="sigle_chat_left d-flex">
 
-                                    <img src="./assets/img/avatar_1.jpg"
+                                    <img :src="'./assets/img/avatar' +
+                                        contacts[activeContact].avatar + '.jpg'"
                                         alt="">
 
                                     <div class="single_chat_left_text mt-2">
-                                        <h6 class=" m-1">Michele</h6>
+                                        <h6 class=" m-1">{{contacts[activeContact].name}}</h6>
                                         <span class="ms-1">Ultimo messaggio
                                             inviato
                                         </span>
