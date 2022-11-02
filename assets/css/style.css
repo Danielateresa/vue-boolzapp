@@ -40,6 +40,10 @@
     background-color: var(--light-gray-bar-bool);
 }
 
+.text_gray {
+    color: var(--top-icons-bool);
+}
+
 /*#endregion utility*/
 
 /*#region bg_app*/
@@ -150,6 +154,11 @@ input {
 
 .friend_msg {
     background-color: var(--white-bool);
+}
+
+.chat_board span {
+    font-size: 12px;
+
 }
 
 /*#endregion chat_box*/

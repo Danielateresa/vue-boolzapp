@@ -102,141 +102,6 @@
                                     </div>
                                 </div>
 
-                                <!--    <div class="single_chat d-flex
-                                    justify-content-between p-2">
-                                    <div class="sigle_chat_left d-flex">
-
-                                        <img src="./assets/img/avatar_2.jpg"
-                                            alt="">
-
-                                        <div class="single_chat_left_text mt-2">
-                                            <h6 class=" m-1">Fabio</h6>
-                                            <span class="ms-1">Ultimo messaggio
-                                                inviato</span>
-                                        </div>
-                                    </div>
-
-                                    <div class="sigle_chat_hour">
-                                        <span>12:00</span>
-                                    </div>
-                                </div>
-
-                                <div class="single_chat d-flex
-                                    justify-content-between p-2">
-                                    <div class="sigle_chat_left d-flex">
-
-                                        <img src="./assets/img/avatar_3.jpg"
-                                            alt="">
-
-                                        <div class="single_chat_left_text mt-2">
-                                            <h6 class=" m-1">Samuele</h6>
-                                            <span class="ms-1">Ultimo messaggio
-                                                inviato</span>
-                                        </div>
-                                    </div>
-
-                                    <div class="sigle_chat_hour">
-                                        <span>12:00</span>
-                                    </div>
-                                </div>
-
-                                <div class="single_chat d-flex
-                                    justify-content-between p-2">
-                                    <div class="sigle_chat_left d-flex">
-
-                                        <img src="./assets/img/avatar_4.jpg"
-                                            alt="">
-
-                                        <div class="single_chat_left_text mt-2">
-                                            <h6 class=" m-1">Alessandro B.</h6>
-                                            <span class="ms-1">Ultimo messaggio
-                                                inviato</span>
-                                        </div>
-                                    </div>
-
-                                    <div class="sigle_chat_hour">
-                                        <span>12:00</span>
-                                    </div>
-                                </div>
-
-                                <div class="single_chat d-flex
-                                    justify-content-between p-2">
-                                    <div class="sigle_chat_left d-flex">
-
-                                        <img src="./assets/img/avatar_5.jpg"
-                                            alt="">
-
-                                        <div class="single_chat_left_text mt-2">
-                                            <h6 class=" m-1">Alessandro L.</h6>
-                                            <span class="ms-1">Ultimo messaggio
-                                                inviato</span>
-                                        </div>
-                                    </div>
-
-                                    <div class="sigle_chat_hour">
-                                        <span>12:00</span>
-                                    </div>
-                                </div>
-
-                                <div class="single_chat d-flex
-                                    justify-content-between p-2">
-                                    <div class="sigle_chat_left d-flex">
-
-                                        <img src="./assets/img/avatar_6.jpg"
-                                            alt="">
-
-                                        <div class="single_chat_left_text mt-2">
-                                            <h6 class=" m-1">Claudia</h6>
-                                            <span class="ms-1">Ultimo messaggio
-                                                inviato</span>
-                                        </div>
-                                    </div>
-
-                                    <div class="sigle_chat_hour">
-                                        <span>12:00</span>
-                                    </div>
-
-
-                                </div>
-                                <div class="single_chat d-flex
-                                    justify-content-between p-2">
-                                    <div class="sigle_chat_left d-flex">
-                                        <img src="./assets/img/avatar_7.jpg"
-                                            alt="">
-
-                                        <div class="single_chat_left_text
-                                            mt-2">
-                                            <h6 class=" m-1">Federico</h6>
-                                            <span class="ms-1">Ultimo
-                                                messaggio
-                                                inviato</span>
-                                        </div>
-                                    </div>
-
-                                    <div class="sigle_chat_hour">
-                                        <span>12:00</span>
-                                    </div>
-                                </div>
-
-                                <div class="single_chat d-flex
-                                    justify-content-between p-2">
-                                    <div class="sigle_chat_left d-flex">
-                                        <img src="./assets/img/avatar_8.jpg"
-                                            alt="">
-
-                                        <div class="single_chat_left_text
-                                            mt-2">
-                                            <h6 class=" m-1">Davide</h6>
-                                            <span class="ms-1">Ultimo
-                                                messaggio
-                                                inviato</span>
-                                        </div>
-                                    </div>
-
-                                    <div class="sigle_chat_hour">
-                                        <span>12:00</span>
-                                    </div>
-                                </div> -->
                             </div>
                             <!-- /.chat_list_box -->
                         </div>
@@ -269,17 +134,22 @@
                                 </div>
                             </div>
 
-                            <div class="chat_board">
+                            <div
+                                class="chat_board">
 
                                 <div class="d-flex justify-content-end">
                                     <div class="user_msg messages">
-                                        <span>testo</span>
+                                        <h6
+                                            v-if="contacts[activeContact].messages[activeContact].status
+                                            === sent" class="fw-normal mb-0">{{contacts[activeContact].messages[activeContact].message}}</h6>
+                                        <span class="text_gray">{{contacts[activeContact].messages[activeContact].date}}</span>
                                     </div>
                                 </div>
 
                                 <div class="d-flex justify-content-start">
                                     <div class="messages friend_msg">
-                                        Tutto fatto!
+                                        <h6 class="fw-normal mb-0 ">{{contacts[activeContact].messages[activeContact].message}}</h6>
+                                        <span class="text_gray">{{contacts[activeContact].messages[activeContact].date}}</span>
                                     </div>
                                 </div>
 
