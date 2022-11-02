@@ -17,12 +17,45 @@
     box-sizing: border-box;
 }
 
+/*#region utility*/
+.white_bg_bool {
+    background-color: var(--white-bool);
+}
+
+/*#endregion utility*/
+
+.bg_app {
+
+    height: 100vh;
+    position: relative;
+}
+
 .bg_top {
-    height: 145px;
+    height: 140px;
     background-color: #009688;
 }
 
 .bg_bottom {
-    height: calc(100vh - 145px);
+    height: calc(100% - 140px);
     background-image: linear-gradient(#DDDBD1, #D2DBDB);
+}
+
+.main {
+    background-color: #B1B1B1;
+    height: 90%;
+    width: 90%;
+    position: absolute;
+    top: 20px;
+    left: calc(50% - 90%/2);
+}
+
+img {
+    height: 50px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+}
+
+
+.right_users_header {
+    color: var(--top-icons-bool);
 }
