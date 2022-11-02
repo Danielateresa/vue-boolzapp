@@ -22,8 +22,17 @@
     background-color: var(--white-bool);
 }
 
+.notifications_bg_bool {
+    background-color: var(--notificatons-bool);
+}
+
+.notifications_color_bool {
+    color: var(--notificatons-bool);
+}
+
 /*#endregion utility*/
 
+/*#region bg_app*/
 .bg_app {
 
     height: 100vh;
@@ -40,6 +49,19 @@
     background-image: linear-gradient(#DDDBD1, #D2DBDB);
 }
 
+/*#endregion bg_app*/
+
+
+/*#region common*/
+img {
+    height: 50px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+}
+
+/*#endregion common*/
+
+/*#region main*/
 .main {
     background-color: #B1B1B1;
     height: 90%;
@@ -49,13 +71,11 @@
     left: calc(50% - 90%/2);
 }
 
-img {
-    height: 50px;
-    aspect-ratio: 1/1;
-    border-radius: 50%;
-}
+/*#endregion main*/
 
-
+/*#region users_box*/
 .right_users_header {
     color: var(--top-icons-bool);
 }
+
+/*#region users_box*/
