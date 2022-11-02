@@ -1,0 +1,18 @@
+:root {
+    --headerBar-bool: #009688;
+    --bottom-icons-bool: #727677;
+    --top-icons-bool: #B1B1B1;
+    --notificatons-bool: #8EDAFC;
+    --bottom-bg-bool: #D2DBDB;
+    --user-msg-bool: #D5F9BA;
+    --top-bg-bool: #DDDBD1;
+    --light-gray-bar-bool: #EAEAEA;
+    --bottom-bar-bool: #F3EEEA;
+    --white-bool: #FFFFFF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
