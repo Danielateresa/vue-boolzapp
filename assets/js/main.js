@@ -175,7 +175,9 @@ createApp({
 
     },
     methods: {
-
+        selectChat(i) {
+            this.activeContact = i;
+        }
     }
 }).mount('#app');
 

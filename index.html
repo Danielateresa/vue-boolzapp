@@ -81,9 +81,9 @@
                             <div class="chat_list_box">
                                 <div v-for="(contact, i) in contacts"
                                     class="single_chat d-flex
-                                    justify-content-between p-2 active_chat">
-                                    <div
-                                        class="sigle_chat_left d-flex">
+                                    justify-content-between p-2 active_chat"
+                                    @click="selectChat(i)">
+                                    <div class="sigle_chat_left d-flex">
 
                                         <img
                                             :src="'./assets/img/avatar' +
