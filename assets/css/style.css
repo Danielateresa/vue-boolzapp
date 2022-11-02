@@ -89,7 +89,8 @@ input {
     color: var(--top-icons-bool);
 }
 
-.notification_text h6 {
+.notification_text h6,
+.single_chat_left_text h6 {
     margin-top: 0;
     margin-bottom: 0.5rem;
     line-height: 0.5;
@@ -100,6 +101,10 @@ input {
     color: var(--top-icons-bool);
 }
 
+.chat_list_box span {
+    color: var(--top-icons-bool);
+    font-size: 14px;
+}
 
 
 /*#region users_box*/
