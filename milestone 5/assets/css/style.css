@@ -105,6 +105,12 @@ input {
     color: var(--top-icons-bool);
 }
 
+.bell_bg {
+    width: 60px;
+    aspect-ratio: 1/1;
+    text-align: center;
+}
+
 .notification_text h6,
 .single_chat_left_text h6 {
     margin-top: 0;

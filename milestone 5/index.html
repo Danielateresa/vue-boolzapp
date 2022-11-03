@@ -157,9 +157,9 @@
                                                 Message info
                                             </a>
                                         </li>
-                                        <li>
-                                            <a href="#"
-                                                @click="deleteMessage(i,[activeContact])">
+                                        <li
+                                            @click="deleteMessage(i,[activeContact])">
+                                            <a href="#">
                                                 Delete message
                                             </a>
                                         </li>
@@ -169,14 +169,14 @@
                                 </div>
                                 <div v-for="(message, i) in
                                     contacts[activeContact].messages"
-                                    class="d-flex "
-                                    @click="showOption">
+                                    class="d-flex ">
 
-                                    <div class="messages"
+                                    <div class="messages text-end"
                                         :class="contacts[activeContact].messages[i].status
-                                        === 'sent' ? 'user_msg' : 'friend_msg'">
+                                        === 'sent' ? 'user_msg' : 'friend_msg'"
+                                        @click="showOption">
                                         <h6 class="fw-normal mb-0">{{contacts[activeContact].messages[i].message}}</h6>
-                                        <span class="text_gray"><!-- {{contacts[activeContact].messages[i].date}} --></span>
+                                        <span class="text_gray">{{contacts[activeContact].messages[i].date}}</span>
                                     </div>
 
                                 </div>

@@ -213,6 +213,7 @@ createApp({
         },
         deleteMessage(i, [activeContact]) {
             this.contacts[activeContact].messages.splice(i, 1);
+            this.option = false;
         }
     }
 
