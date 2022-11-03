@@ -10,6 +10,7 @@ createApp({
             activeContact: 0,
             timeoutId: null,
             searchFriend: '',
+            option: false,
             newUserMessage: {
                 date: '',
                 message: '',
@@ -202,8 +203,17 @@ createApp({
             this.timeoutId = setTimeout(() => {
                 this.contacts[activeContact].messages.push(this.replyMessage);
             }, 1000)
+        },
+        showOption() {
+            if (this.option === false) {
+                this.option = true;
+            } else {
+                this.option = false;
+            }
+        },
+        deleteMessage(i, [activeContact]) {
+            this.contacts[activeContact].messages.splice(i, 1);
         }
-
     }
 
 }).mount('#app');

@@ -148,10 +148,29 @@
                             <!-- /.right_header -->
 
                             <div class="chat_board">
+                                <div class="message_option
+                                    white_bg_bool p-2 shadow"
+                                    v-show="option">
+                                    <ul>
+                                        <li>
+                                            <a href="#">
+                                                Message info
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#"
+                                                @click="deleteMessage(i,[activeContact])">
+                                                Delete message
+                                            </a>
+                                        </li>
+                                    </ul>
 
+
+                                </div>
                                 <div v-for="(message, i) in
                                     contacts[activeContact].messages"
-                                    class="d-flex">
+                                    class="d-flex "
+                                    @click="showOption">
 
                                     <div class="messages"
                                         :class="contacts[activeContact].messages[i].status
