@@ -8,6 +8,11 @@ createApp({
     data() {
         return {
             activeContact: 0,
+            newUserMessage: {
+                date: '10/01/2020 15:30:55',
+                message: '',
+                status: 'sent'
+            },
             contacts: [
                 {
                     name: 'Michele',
@@ -174,14 +179,18 @@ createApp({
         }
 
     },
+
     methods: {
         selectChat(i) {
             this.activeContact = i;
+        },
+        addMessage(activeContact) {
+            this.contacts[activeContact].messages.push(this.newUserMessage);
         }
     }
+
 }).mount('#app');
 
-//da fare--->impostare la classe active sul contatto con chat attiva
 
 
 
