@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <title>vue-boolzap</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1,
+            shrink-to-fit=no">
+
+        <!-- font awesome -->
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+            integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+        <!-- Bootstrap CSS v5.2.1 -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+            crossorigin="anonymous">
+        <!-- my style -->
+        <link rel="stylesheet" href="./assets/css/style.css">
+
+    </head>
+
+    <body>
+
+        <div id="app">
+            <div class="bg_app">
+
+                <div class="bg_top"></div>
+                <div class="bg_bottom"></div>
+
+                <div class="main">
+                    <div class="row g-0 h-100">
+                        <div class="users_box col-4 white_bg_bool">
+                            <div class="left_header d-flex
+                                justify-content-between align-items-center p-2
+                                top_bar_bg">
+                                <div class="left_users_header d-flex
+                                    align-items-center">
+                                    <img src="./assets/img/avatar_io.jpg"
+                                        alt="">
+                                    <h6 class=" m-1">Sofia</h6>
+                                </div>
+                                <!-- /.left_sers_header -->
+
+                                <div class="right_users_header">
+                                    <i class="fa-solid fa-circle-notch m-1"></i>
+                                    <i class="fa-solid fa-message m-1"></i>
+                                    <i class="fa-solid fa-ellipsis-vertical
+                                        m-1"></i>
+                                </div>
+                                <!-- /.right_users_header -->
+
+                            </div>
+                            <!-- /.left_header -->
+
+                            <div class="notificatons notifications_bg_bool
+                                d-flex pt-2 pb-2 ps-3 align-items-center">
+                                <div class="bell_bg p-3 white_bg_bool
+                                    rounded-circle notifications_color_bool">
+                                    <i class="fa-solid fa-bell-slash"></i>
+                                </div>
+
+                                <div class="notification_text ms-2 mt-2">
+                                    <h6>Ricevi notifiche di nuovi messaggi</h6>
+                                    <a href="#">Attiva notifiche desktop</a>
+                                </div>
+                            </div>
+                            <!-- /.notifications -->
+
+                            <div class="search_bar p-1 d-flex bg_searchbar">
+                                <button class="white_bg_bool">
+                                    <i class="lens
+                                        fa-solid
+                                        fa-magnifying-glass">
+                                    </i>
+                                </button>
+                                <input class="w-100 ms-1" type="text"
+                                    placeholder="Cerca e inizia una nuova chat"
+                                    v-model="searchFriend">
+                                <!-- {{searchFriend}} -->
+                            </div>
+
+                            <!-- /.search_bar -->
+
+                            <div class="chat_list_box" v-for="(contact, i) in
+                                contacts">
+                                <div :class="i === activeContact ? 'active_chat'
+                                    : '' "
+                                    class="single_chat d-flex
+                                    justify-content-between p-2"
+                                    @click="selectChat(i)"
+                                    v-if="contact.name.includes(searchFriend)">
+                                    <div class="sigle_chat_left d-flex">
+                                        <img
+                                            :src="'./assets/img/avatar' +
+                                            contacts[i].avatar + '.jpg'"
+                                            alt="">
+
+                                        <div class="single_chat_left_text mt-2">
+                                            <h6 class=" m-1">{{contacts[i].name}}</h6>
+                                            <span class="ms-1">Ultimo messaggio
+                                                inviato</span>
+                                        </div>
+                                    </div>
+                                    <div class="sigle_chat_hour">
+                                        <span>12:00</span>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <!-- /.chat_list_box -->
+                        </div>
+                        <!-- /.users_box -->
+
+
+                        <div class="chat_box col-8">
+                            <div class="right_header d-flex
+                                justify-content-between align-items-center p-2
+                                bg top_bar_bg">
+                                <div class="sigle_chat_left d-flex">
+
+                                    <img :src="'./assets/img/avatar' +
+                                        contacts[activeContact].avatar + '.jpg'"
+                                        alt="">
+
+                                    <div class="single_chat_left_text mt-2">
+                                        <h6 class=" m-1">{{contacts[activeContact].name}}</h6>
+                                        <span class="ms-1">Ultimo messaggio
+                                            inviato
+                                        </span>
+                                        <span class="sigle_chat_hour">12:00</span>
+                                    </div>
+                                </div>
+
+                                <div class="sigle_chat_right d-flex">
+                                    <i class="fa-solid fa-magnifying-glass m-1"></i>
+                                    <i class="fa-solid fa-paperclip m-1"></i>
+                                    <i class="fa-solid fa-ellipsis-vertical
+                                        m-1"></i>
+                                </div>
+                            </div>
+                            <!-- /.right_header -->
+
+                            <div class="chat_board">
+
+                                <div v-for="(message, i) in
+                                    contacts[activeContact].messages"
+                                    class="d-flex">
+
+                                    <div class="messages"
+                                        :class="contacts[activeContact].messages[i].status
+                                        === 'sent' ? 'user_msg' : 'friend_msg'">
+                                        <h6 class="fw-normal mb-0">{{contacts[activeContact].messages[i].message}}</h6>
+                                        <span class="text_gray"><!-- {{contacts[activeContact].messages[i].date}} --></span>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <!-- /.chat_board -->
+                            <div class="bottom_bar d-flex
+                                justify-content-between bg_searchbar p-1">
+                                <i class="fa-regular fa-face-smile py-2 px-4"></i>
+                                <input class="w-100 rounded-2 " type="text"
+                                    placeholder="Scrivi un messaggio"
+                                    v-model="newUserMessage.message"
+                                    @keyup.enter="addMessage(activeContact)"><!-- {{newUserMessage.message}} -->
+                                <i class="fa-solid fa-microphone py-2 px-4"></i>
+                            </div>
+                        </div>
+                        <!-- /.chat_box -->
+                    </div>
+                </div>
+                <!-- /.main -->
+            </div>
+
+        </div>
+
+
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        <script src="./assets/js/main.js"></script>
+    </body>
+
+</html>

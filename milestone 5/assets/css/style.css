@@ -1,0 +1,173 @@
+:root {
+    --headerBar-bool: #009688;
+    --bottom-icons-bool: #727677;
+    --top-icons-bool: #B1B1B1;
+    --notificatons-bool: #8EDAFC;
+    --bottom-bg-bool: #D2DBDB;
+    --user-msg-bool: #D5F9BA;
+    --top-bg-bool: #DDDBD1;
+    --light-gray-bar-bool: #EAEAEA;
+    --bottom-bar-bool: #F3EEEA;
+    --white-bool: #FFFFFF;
+    --bg-chatlist-bool: #FAFAFA;
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*#region utility*/
+.white_bg_bool {
+    background-color: var(--white-bool);
+}
+
+.notifications_bg_bool {
+    background-color: var(--notificatons-bool);
+}
+
+.notifications_color_bool {
+    color: var(--notificatons-bool);
+}
+
+.bg_searchbar {
+    background-color: var(--bg-chatlist-bool);
+}
+
+.top_bar_bg {
+    background-color: var(--light-gray-bar-bool);
+}
+
+.text_gray {
+    color: var(--top-icons-bool);
+}
+
+/*#endregion utility*/
+
+/*#region bg_app*/
+.bg_app {
+
+    height: 100vh;
+    position: relative;
+}
+
+.bg_top {
+    height: 140px;
+    background-color: #009688;
+}
+
+.bg_bottom {
+    height: calc(100% - 140px);
+    background-image: linear-gradient(#DDDBD1, #D2DBDB);
+}
+
+.active_chat {
+    background-color: var(--light-gray-bar-bool);
+}
+
+/*#endregion bg_app*/
+
+
+/*#region common*/
+
+body {
+    height: 100vh;
+}
+
+img {
+    height: 50px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+}
+
+button,
+input {
+    border: none
+}
+
+/*#endregion common*/
+
+/*#region main*/
+.main {
+    height: 800px;
+    width: 90%;
+    position: absolute;
+    top: 20px;
+    left: calc(50% - 90%/2);
+}
+
+/*#endregion main*/
+
+/*#region users_box*/
+.right_users_header {
+    color: var(--top-icons-bool);
+}
+
+.notification_text h6,
+.single_chat_left_text h6 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    line-height: 0.5;
+}
+
+.lens {
+    padding: 0.4rem 2rem;
+    color: var(--top-icons-bool);
+}
+
+.chat_list_box span {
+    color: var(--top-icons-bool);
+    font-size: 14px;
+}
+
+.users_box {
+    height: 100%;
+    border-right: 1px solid var(--top-icons-bool);
+}
+
+.single_chat {
+    border: 1px solid var(--bg-chatlist-bool);
+}
+
+/*#region users_box*/
+
+/*#region chat_box*/
+.sigle_chat_right i {
+    color: var(--top-icons-bool);
+}
+
+.chat_board {
+
+    background-image: url(../img/mine.jpg);
+    height: calc(100% - 106px)
+}
+
+.bottom_bar i {
+    color: var(--bottom-icons-bool)
+}
+
+.messages {
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    margin: 0.5rem 3rem 0.5rem 2rem;
+
+}
+
+.user_msg {
+    background-color: var(--user-msg-bool);
+    margin-left: auto;
+}
+
+.friend_msg {
+    background-color: var(--white-bool);
+
+}
+
+.chat_board span {
+    font-size: 12px;
+
+}
+
+/*#endregion chat_box*/
