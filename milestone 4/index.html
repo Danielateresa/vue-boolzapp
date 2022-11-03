@@ -87,14 +87,15 @@
 
                             <!-- /.search_bar -->
 
-                            <div class="chat_list_box">
+                            <div class="chat_list_box" v-for="(contact, i) in
+                                contacts">
                                 <div :class="i === activeContact ? 'active_chat'
-                                    : '' " v-for="(contact, i) in contacts"
+                                    : '' "
                                     class="single_chat d-flex
                                     justify-content-between p-2"
-                                    @click="selectChat(i)">
-                                    <div class="sigle_chat_left d-flex"
-                                        v-if="contact.name.includes(searchFriend)">
+                                    @click="selectChat(i)"
+                                    v-if="contact.name.includes(searchFriend)">
+                                    <div class="sigle_chat_left d-flex">
                                         <img
                                             :src="'./assets/img/avatar' +
                                             contacts[i].avatar + '.jpg'"
@@ -106,10 +107,10 @@
                                                 inviato</span>
                                         </div>
                                     </div>
-
                                     <div class="sigle_chat_hour">
                                         <span>12:00</span>
                                     </div>
+
                                 </div>
 
                             </div>
