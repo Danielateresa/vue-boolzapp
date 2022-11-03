@@ -171,12 +171,12 @@
                                     contacts[activeContact].messages"
                                     class="d-flex ">
 
-                                    <div class="messages text-end"
+                                    <div class="messages d-flex flex-column"
                                         :class="contacts[activeContact].messages[i].status
                                         === 'sent' ? 'user_msg' : 'friend_msg'"
                                         @click="showOption">
                                         <h6 class="fw-normal mb-0">{{contacts[activeContact].messages[i].message}}</h6>
-                                        <span class="text_gray">{{contacts[activeContact].messages[i].date}}</span>
+                                        <span class="text_gray align-self-end">{{contacts[activeContact].messages[i].date}}</span>
                                     </div>
 
                                 </div>
