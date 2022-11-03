@@ -8,11 +8,16 @@ createApp({
     data() {
         return {
             activeContact: 0,
-            intervalId: null,
+            timeoutId: null,
             newUserMessage: {
-                date: '10/01/2020 15:30:55',
+                date: '',
                 message: '',
                 status: 'sent'
+            },
+            replyMessage: {
+                date: '',
+                message: 'Ok',
+                status: 'received'
             },
             contacts: [
                 {
@@ -188,11 +193,14 @@ createApp({
         addMessage(activeContact) {
             this.contacts[activeContact].messages.push(this.newUserMessage);
             this.newUserMessage = {
-                date: '10/01/2020 15:30:55',
+                date: '',
                 message: '',
                 status: 'sent'
             };
 
+            this.timeoutId = setTimeout(() => {
+                this.contacts[activeContact].messages.push(this.replyMessage);
+            }, 1000)
         }
     }
 
