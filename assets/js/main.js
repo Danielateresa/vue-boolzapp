@@ -8,6 +8,12 @@ createApp({
     data() {
         return {
             activeContact: 0,
+            intervalId: null,
+            newUserMessage: {
+                date: '10/01/2020 15:30:55',
+                message: '',
+                status: 'sent'
+            },
             contacts: [
                 {
                     name: 'Michele',
@@ -178,6 +184,15 @@ createApp({
     methods: {
         selectChat(i) {
             this.activeContact = i;
+        },
+        addMessage(activeContact) {
+            this.contacts[activeContact].messages.push(this.newUserMessage);
+            this.newUserMessage = {
+                date: '10/01/2020 15:30:55',
+                message: '',
+                status: 'sent'
+            };
+
         }
     }
 
