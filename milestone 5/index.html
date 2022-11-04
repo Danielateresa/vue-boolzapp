@@ -114,6 +114,7 @@
                                     </div>
 
                                 </div>
+                                <!-- single_chat -->
 
                             </div>
                             <!-- /.chat_list_box -->
@@ -150,7 +151,7 @@
                             <!-- /.right_header -->
 
                             <div class="chat_board">
-                                <div class="message_option
+                                <!-- <div class="message_option
                                     white_bg_bool p-2 shadow"
                                     v-show="option">
                                     <ul>
@@ -165,20 +166,32 @@
                                                 Delete message
                                             </a>
                                         </li>
-                                    </ul>
-
-
-                                </div>
+                                    </ul> -->
                                 <div v-for="(message, i) in
                                     contacts[activeContact].messages"
                                     class="d-flex ">
 
-                                    <div class="messages d-flex flex-column"
+                                    <div class="messages d-flex "
                                         :class="contacts[activeContact].messages[i].status
-                                        === 'sent' ? 'user_msg' : 'friend_msg'"
-                                        @click="showOption">
-                                        <h6 class="fw-normal mb-0">{{contacts[activeContact].messages[i].message}}</h6>
-                                        <span class="text_gray align-self-end">{{contacts[activeContact].messages[i].date}}</span>
+                                        === 'sent' ? 'user_msg' : 'friend_msg'">
+                                        <h6 class="fw-normal mb-0">{{message.message}}</h6>
+                                        <span class="text_gray align-self-end">{{message.date}}</span>
+                                        <div class="dropdown ">
+                                            <button class="btn dropdown-toggle
+                                                border-0"
+                                                type="button"
+                                                data-bs-toggle="dropdown"
+                                                aria-expanded="false">
+
+                                            </button>
+                                            <ul class="dropdown-menu">
+                                                <li><a class="dropdown-item"
+                                                        href="#"
+                                                        @click="deleteMessage(i)"></a>Delete
+                                                    message</li>
+
+                                            </ul>
+                                        </div>
                                     </div>
 
                                 </div>

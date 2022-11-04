@@ -204,15 +204,15 @@ createApp({
                 this.contacts[activeContact].messages.push(this.replyMessage);
             }, 1000)
         },
-        showOption() {
+        /* showOption() {
             if (this.option === false) {
                 this.option = true;
             } else {
                 this.option = false;
             }
-        },
-        deleteMessage(i, [activeContact]) {
-            this.contacts[activeContact].messages.splice(i, 1);
+        }, */
+        deleteMessage(i) {
+            this.contacts[this.activeContact].messages.splice(i, 1);
             this.option = false;
         }
     }

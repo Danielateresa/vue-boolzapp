@@ -164,7 +164,7 @@ input {
 .user_msg {
     background-color: var(--user-msg-bool);
     margin-left: auto;
-    position: relative;
+
 }
 
 .friend_msg {
@@ -177,24 +177,6 @@ input {
 
 }
 
-.message_option {
-    position: absolute;
-    right: 60px;
-    top: 100px;
-    z-index: 2;
-}
-
-.message_option a {
-    text-decoration: none;
-    color: var(--bottom-icons-bool);
-
-}
-
-.message_option ul {
-    list-style: none;
-    margin: 0;
-    padding: 0.5rem;
-}
 
 
 /*#endregion chat_box*/
