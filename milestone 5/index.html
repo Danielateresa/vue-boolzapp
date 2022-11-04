@@ -94,9 +94,9 @@
                                     class="single_chat d-flex
                                     justify-content-between p-2"
                                     @click="selectChat(i)"
-                                    v-if="(contact.name.includes(searchFriend))
+                                    v-if="(contact.name.startsWith(searchFriend))
                                     ||
-                                    (contact.name.toLowerCase()).includes(searchFriend)">
+                                    (contact.name.toLowerCase()).startsWith(searchFriend)">
                                     <div class="sigle_chat_left d-flex">
                                         <img
                                             :src="'./assets/img/avatar' +
@@ -207,7 +207,11 @@
         </div>
 
         <script
-            src="https://cdn.jsdelivr.net/npm/luxon@3.1.0/build/global/luxon.min.js"></script>
+            src="https://cdn.jsdelivr.net/npm/luxon@3.1.0/build/global/luxon.min.js">
+           /*  const now = DateTime.now(); */
+        /*     console.log('time =' + DateTime.now()); */
+           
+            </script>
         <!-- luxon script -->
         <script
             src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
