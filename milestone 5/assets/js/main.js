@@ -211,9 +211,9 @@ createApp({
                 this.option = false;
             }
         }, */
-        deleteMessage(i) {
+        removeMessage(i) {
             this.contacts[this.activeContact].messages.splice(i, 1);
-            this.option = false;
+
         }
     }
 
