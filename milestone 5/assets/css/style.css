@@ -177,6 +177,9 @@ input {
 
 }
 
+.dropdown-toggle::after {
+    content: none;
+}
 
 
 /*#endregion chat_box*/
