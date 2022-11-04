@@ -94,7 +94,9 @@
                                     class="single_chat d-flex
                                     justify-content-between p-2"
                                     @click="selectChat(i)"
-                                    v-if="contact.name.includes(searchFriend)">
+                                    v-if="(contact.name.includes(searchFriend))
+                                    ||
+                                    (contact.name.toLowerCase()).includes(searchFriend)">
                                     <div class="sigle_chat_left d-flex">
                                         <img
                                             :src="'./assets/img/avatar' +
