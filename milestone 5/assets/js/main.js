@@ -4,6 +4,7 @@ Visualizzazione dinamica della lista contatti: tramite la direttiva v-for, visua
 
 const { createApp } = Vue;
 
+
 createApp({
     data() {
         return {
@@ -189,11 +190,12 @@ createApp({
     },
 
     methods: {
+
         selectChat(i) {
             this.activeContact = i;
         },
-        addMessage(activeContact) {
-            this.contacts[activeContact].messages.push(this.newUserMessage);
+        addMessage() {
+            this.contacts[this.activeContact].messages.push(this.newUserMessage);
             this.newUserMessage = {
                 date: '',
                 message: '',
@@ -201,26 +203,15 @@ createApp({
             };
 
             this.timeoutId = setTimeout(() => {
-                this.contacts[activeContact].messages.push(this.replyMessage);
+                this.contacts[this.activeContact].messages.push(this.replyMessage);
             }, 1000)
         },
-        /* showOption() {
-            if (this.option === false) {
-                this.option = true;
-            } else {
-                this.option = false;
-            }
-        }, */
         removeMessage(i) {
             this.contacts[this.activeContact].messages.splice(i, 1);
 
-        }
+        },
+
     }
 
-}).mount('#app');
-
-
-
-
-
+}).mount('#app')
 
