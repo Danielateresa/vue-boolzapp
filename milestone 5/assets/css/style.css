@@ -137,6 +137,11 @@ input {
     border: 1px solid var(--bg-chatlist-bool);
 }
 
+.all_contacts {
+    overflow-y: scroll;
+    height: calc(100% - 179px);
+}
+
 /*#region users_box*/
 
 /*#region chat_box*/
@@ -179,6 +184,10 @@ input {
 
 .dropdown-toggle::after {
     content: none;
+}
+
+.chat_board {
+    overflow-y: scroll;
 }
 
 

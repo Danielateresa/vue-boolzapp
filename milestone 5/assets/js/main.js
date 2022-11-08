@@ -3,7 +3,7 @@ Replica della grafica con la possibilità di avere messaggi scritti dall’utent
 Visualizzazione dinamica della lista contatti: tramite la direttiva v-for, visualizzare nome e immagine di ogni contatto */
 
 const { createApp } = Vue;
-
+const dt = luxon.DateTime //luxon libreria per formattare date e orari
 
 createApp({
     data() {
@@ -12,16 +12,7 @@ createApp({
             timeoutId: null,
             searchFriend: '',
             option: false,
-            newUserMessage: {
-                date: '',
-                message: '',
-                status: 'sent'
-            },
-            replyMessage: {
-                date: '',
-                message: 'Ok',
-                status: 'received'
-            },
+            newMessage: '',
             contacts: [
                 {
                     name: 'Michele',
@@ -195,16 +186,31 @@ createApp({
             this.activeContact = i;
         },
         addMessage() {
-            this.contacts[this.activeContact].messages.push(this.newUserMessage);
-            this.newUserMessage = {
-                date: '',
-                message: '',
+            /* formatto il nuovo messaggio con giorno e ora luxon */
+            const newMessage = {
+                date: dt.now().setLocale('it').toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS),
+                message: this.newMessage,
                 status: 'sent'
             };
+            //pusho il nuovo messaggio nell'array
+            this.contacts[this.activeContact].messages.push(newMessage);
 
-            this.timeoutId = setTimeout(() => {
-                this.contacts[this.activeContact].messages.push(this.replyMessage);
-            }, 1000)
+            //svuoto nuovamente l'input
+            this.newMessage = '';
+
+            //timer applicato invocandp la funzione per la risposta automatica al messaggio
+            setTimeout(this.replyMessage, 1000)
+        },
+        //funzione di risposta automatica al messaggio
+        replyMessage() {
+            const newMessage = {
+                date: dt.now().setLocale('it').toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS),
+                message: 'Ok',
+                status: 'received'
+            };
+
+            this.contacts[this.activeContact].messages.push(newMessage);
+
         },
         removeMessage(i) {
             this.contacts[this.activeContact].messages.splice(i, 1);
