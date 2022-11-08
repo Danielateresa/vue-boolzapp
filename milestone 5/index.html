@@ -107,17 +107,19 @@
                                         ||
                                         (contact.name.toLowerCase()).startsWith(searchFriend)">
                                         <div class="sigle_chat_left d-flex">
-                                            <img
+                                            <img class="me-1"
                                                 :src="'./assets/img/avatar' +
                                                 contacts[i].avatar + '.jpg'"
                                                 alt="">
 
                                             <div class="single_chat_left_text
                                                 mt-2">
-                                                <h6 class=" m-1">{{contacts[i].name}}</h6>
-                                                <span class="ms-1"
+                                                <h6>{{contacts[i].name}}</h6>
+                                                <span
                                                     v-if="contact.messages.length>
                                                     0">{{contact.messages.slice(-1)[0].message}}</span>
+                                                <span class="ms-1" v-else>Nessun
+                                                    mesaggio</span>
                                             </div>
                                         </div>
                                         <div class="sigle_chat_hour">

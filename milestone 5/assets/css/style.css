@@ -135,11 +135,19 @@ input {
 
 .single_chat {
     border: 1px solid var(--bg-chatlist-bool);
+    position: relative
 }
 
 .all_contacts {
     overflow-y: scroll;
     height: calc(100% - 179px);
+}
+
+.sigle_chat_hour span {
+    font-size: 12px;
+    position: absolute;
+    top: 5px;
+    right: 5px
 }
 
 /*#region users_box*/
